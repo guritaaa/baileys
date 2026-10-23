@@ -1,7 +1,7 @@
 
 
 <div align="center">
-  <h1>💫 @rexxhayanasi/elaina-baileys</h1>
+  <h1>💫 guritaaa/baileys</h1>
   <p><em>Library WhatsApp custom di atas Baileys — diperbaiki, dimodernkan, dan dilengkapi message builder bawaan.</em></p>
 
   <img src="https://files.catbox.moe/z913tc.jpg" width="400" alt="Elaina Baileys Banner" />
