@@ -143,10 +143,10 @@ export const generateMessageIDV2 = (userId) => {
     }
     randomFillSync(data, 28, 16);
     const hash = createHash('sha256').update(data).digest();
-    return 'GURITA' + hash.toString('hex', 0, 9).toUpperCase();
+    return 'ACGURITA' + hash.toString('hex', 0, 9).toUpperCase();
 };
 
-export const generateMessageID = () => 'GURITA' + randomBytes(8).toString('hex').toUpperCase();
+export const generateMessageID = () => 'ACGURITA' + randomBytes(8).toString('hex').toUpperCase();
 export function bindWaitForEvent(ev, event) {
     return async (check, timeoutMs) => {
         let listener;
