@@ -85,7 +85,7 @@ export const ACCOUNT_RESTRICTED_TEXT = 'Your account has been restricted';
 export const DECRYPTION_RETRY_CONFIG = {
     maxRetries: 3,
     baseDelayMs: 100,
-    sessionRecordErrors: ['No session record', 'SessionError: No session record']
+    sessionRecordErrors: ['No session record', 'SessionError: No session record', 'No open session', 'Bad MAC', 'InvalidMessageException', 'Decryption failed']
 };
 
 export const NACK_REASONS = {
@@ -345,13 +345,17 @@ export const decryptMessageNode = (stanza, meId, meLid, repository, logger) => {
                         }
                     }
                     catch (err) {
+                        const isSessionError = isSessionRecordError(err);
+                        if (isSessionError && decryptionJid) {
+                            repository.deleteSession([decryptionJid]).catch(delErr => logger.warn({ jid: decryptionJid, err: delErr }, 'failed to delete bad session'));
+                        }
                         const errorContext = {
                             key: fullMessage.key,
                             err,
                             messageType: tag === 'plaintext' ? 'plaintext' : attrs.type,
                             sender,
                             author,
-                            isSessionRecordError: isSessionRecordError(err)
+                            isSessionRecordError: isSessionError
                         };
                         logger.error(errorContext, 'failed to decrypt message');
                         fullMessage.messageStubType = proto.WebMessageInfo.StubType.CIPHERTEXT;

@@ -1,4 +1,4 @@
-/* Elaina Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
+/* Gurita Baileys maintained distribution. Upstream notices and license are preserved in LICENSE and NOTICE.md. */
 import { DEFAULT_CONNECTION_CONFIG } from '../Defaults/index.js';
 import { prepareModernMessageContent } from '../Utils/modern-messages.js';
 import { makeNewsletterStatusFetcher, makeNewsletterStatusUpdatesFetcher, makeNewsletterStatusReactionSender, makeNewsletterStatusRevokeSender, makeNewsletterStatusSender } from '../Utils/newsletter-status.js';

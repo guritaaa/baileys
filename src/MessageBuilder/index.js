@@ -8,7 +8,7 @@
  * and scalable architecture for modern bot development.
  *
  * Runtime:
- * - Baileys: @rexxhayanasi/elaina-baileys
+ * - Baileys: @guritaaa/baileys
  *
  * Created by Nixel
  * Contributors: ~ Ahmad tumbuh kembang
